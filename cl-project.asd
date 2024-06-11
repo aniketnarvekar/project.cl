@@ -6,7 +6,8 @@
   :depends-on ()
   :components ((:module "src"
                 :components
-                ((:file "main"))))
+                ((:file "package")
+		 (:file "main"))))
   :in-order-to ((test-op (test-op #:cl-project/tests)))
   :perform (compile-op :after (o c)
 		       (load (asdf:system-relative-pathname :cl-project "scripts/automate.lisp"))))
